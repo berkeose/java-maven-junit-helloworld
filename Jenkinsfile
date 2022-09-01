@@ -25,24 +25,18 @@ sh 'mvn test'
 post {
 
 always {
-
-junit 'target/surefire-reports/*.xml'
-
-}
-
-}
-
-}
-
-stage('Deliver') {
-
-steps {
-
-sh './jenkins/scripts/deliver.sh'
+  junit(
+        allowEmptyResults: true,
+        testResults: '*/test-reports/.xml'
+      )
 
 }
 
 }
+
+}
+
+
 
 }
 
