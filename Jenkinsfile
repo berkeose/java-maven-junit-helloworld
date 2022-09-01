@@ -29,6 +29,7 @@ always {
         allowEmptyResults: true,
         testResults: '*/test-reports/.xml'
       )
+  archiveArtifacts artifacts: '**/*.jar', followSymlinks: false
 
 }
 
