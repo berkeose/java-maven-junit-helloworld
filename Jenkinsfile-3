@@ -14,19 +14,17 @@ pipeline {
         }
     }
     stage('Deploy') {
-        agent {
-            node {
-                label 'DockerDefault'
-            }
-         }
-
-      steps {
-            script{
-                unstash 'targetfiles'
-                sh 'ls -l -R'
-                def image = docker.build("image-name:test", ' .')
-            }
-      }
-    }
+  steps {
+        script{
+            unstash 'targetfiles'
+            sh 'docker build image-name:test'
+        }
+  }
+}
+   stage('push') {
+       script{
+       sh'docker push image-name:test'
+       }
+   }
   }
 }
