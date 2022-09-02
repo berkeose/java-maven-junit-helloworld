@@ -5,7 +5,7 @@ pipeline {
         agent {
           docker {
             image 'maven:3-alpine'
-            args '-v /root/.m2:/root/.m2'
+            args '-v /root/.m2:/root/.m2' -v /var/run/docker.sock:/var/run/docker.sock'
           }
         }
         steps {
@@ -13,16 +13,12 @@ pipeline {
             stash includes: 'target/*.jar', name: 'targetfiles'
         }
     }
-    stage('Deploy') { 
-      agent{
-        docker {
+    stage('Deploy') {
+
       steps {
             script{
-                unstash 'targetfiles'
-                 sh 'docker build image-name:test'
+                sh 'docker build image-name:test'
             }
-           }
-          } 
       }
     }
   }
