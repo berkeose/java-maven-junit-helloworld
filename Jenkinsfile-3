@@ -13,13 +13,13 @@ pipeline {
             stash includes: 'target/*.jar', name: 'targetfiles'
         }
     }
-    stage('Deploy') {
-
-      steps {
-            script{
-                sh 'docker build image-name:test'
-            }
-      }
-    }
+   stage('Deploy') {
+  steps {
+        script{
+            unstash 'targetfiles'
+            sh 'docker build image-name:test'
+        }
+  }
+}
   }
 }
