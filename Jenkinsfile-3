@@ -22,9 +22,11 @@ pipeline {
   }
 }
    stage('push') {
+  steps{ 
        script{
-       sh'docker push image-name:test'
+       sh 'docker push image-name:test'
        }
    }
   }
+ }
 }
