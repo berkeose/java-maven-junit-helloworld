@@ -13,13 +13,7 @@ pipeline {
             stash includes: 'target/*.jar', name: 'targetfiles'
         }
     }
-    stage('Deploy') {
-        agent {
-            node {
-                label 'docker_agent'
-            }
-         }
-
+    stage('Deploy') {        
       steps {
             script{
                 unstash 'targetfiles'
