@@ -15,8 +15,8 @@ pipeline {
     }
     stage('Deploy') {
         agent {
-            node {
-                label 'docker_agent'
+            docker {
+                image 'maven:3-alpine'
             }
          }
 
