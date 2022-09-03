@@ -17,7 +17,7 @@ pipeline {
       agent {
         dockerfile true }
         
-           label 'docker_agent' }
+         
         
 
       steps {
@@ -28,6 +28,7 @@ pipeline {
             }
       }
     }
+  }
   }
 
 
