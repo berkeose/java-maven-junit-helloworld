@@ -16,7 +16,8 @@ pipeline {
     stage('Deploy') {
       agent {
         docker {
-    reuseLabelAgent "Build Jar" } }
+          label 'docker_agent' }
+    
    
         
          
