@@ -32,7 +32,7 @@ pipeline {
             script{
                 unstash 'targetfiles'
                 sh 'ls -l -R'
-                def image = docker.build("image-name:test", ' .')
+                def image = docker.build("image-name:test")
             }
       }
     }
