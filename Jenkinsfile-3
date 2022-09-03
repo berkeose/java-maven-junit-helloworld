@@ -30,8 +30,10 @@ pipeline {
       }
     }
     stage('push') {
+    steps{
      sh 'docker tag image-name:test localhost:5000/mtest'
      sh 'docker push localhost:5000/mtest'
+     }
      }
   }
   }
