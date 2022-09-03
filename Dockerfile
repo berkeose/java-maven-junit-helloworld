@@ -1,3 +1,4 @@
+#install OS
 FROM centos
 #install java
 RUN yum install -y java
