@@ -15,7 +15,7 @@ pipeline {
     }
     stage('Deploy') {
       agent {
-    reuseLabelAgent 'Build Jar' }
+    reuseLabelAgent "Build Jar" }
    
         
          
