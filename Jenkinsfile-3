@@ -14,10 +14,7 @@ pipeline {
         }
     }
     stage('Deploy') {
-      agent {
-        node {
-          label 'docker_agent'
-        }}
+   
         
          
         
