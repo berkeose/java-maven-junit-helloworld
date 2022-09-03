@@ -16,8 +16,8 @@ pipeline {
     stage('Deploy') {
         agent {
             docker {
-                image 'maven:3-alpine'
-                -v /var/run/docker.sock:/var/run/docker.sock'
+                label 'docker_agent'
+                
             }
          }
 
