@@ -15,8 +15,11 @@ pipeline {
     }
     stage('Deploy') {
       agent {
+        docker {
+        image 'centos:7'}
+        }
         
-          label 'slave' }
+         
           
     
    
