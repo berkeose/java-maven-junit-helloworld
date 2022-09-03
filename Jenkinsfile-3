@@ -32,8 +32,9 @@ pipeline {
     stage('push') {
       steps {
         script{
-        docker.withRegistry(localhost:5000)
-        imagePush("image-name:test")
+          sh 'docker tag image-name:test localhost:5000/mytest
+          sh 'docker push localhost:5000/mytest
+     
         }
   
      }
