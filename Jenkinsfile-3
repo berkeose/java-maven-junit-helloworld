@@ -19,14 +19,7 @@ pipeline {
                 label 'docker_agent'
             }
          }
-        
-         
-          
-    
-   
-        
-         
-        
+               
 
       steps {
             script{
@@ -36,6 +29,10 @@ pipeline {
             }
       }
     }
+    stage('push') {
+     sh 'docker tag image-name:test localhost:5000/mtest'
+     sh 'docker push localhost:5000/mtest'
+     }
   }
   }
 
