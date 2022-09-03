@@ -16,7 +16,7 @@ pipeline {
     stage('Deploy') {
       agent {
         docker {
-        image 'maven:3-alpine'
+        image 'centos:7'
         }}
         
          
